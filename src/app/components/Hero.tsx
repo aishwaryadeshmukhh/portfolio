@@ -272,7 +272,7 @@ export function Hero() {
               <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    Curriculum Vitae
+                    Resume
                   </h3>
                   <span className="text-xs text-gray-400 font-medium tracking-widest uppercase">Aishwarya Deshmukh</span>
                 </div>
