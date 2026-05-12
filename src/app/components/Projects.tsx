@@ -82,7 +82,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="bg-white rounded-3xl border border-gray-100 p-8 hover:shadow-2xl hover:shadow-purple-500/5 transition-all duration-500 flex flex-col h-full"
+      className="bg-card rounded-3xl border border-border p-8 hover:shadow-2xl hover:shadow-purple-500/5 transition-all duration-500 flex flex-col h-full"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       <h3
@@ -91,7 +91,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         {project.title}
         {project.subtitle && (
-          <span className="text-gray-400 block text-lg mt-1" style={{ fontWeight: 400 }}>
+          <span className="text-muted-foreground block text-lg mt-1" style={{ fontWeight: 400 }}>
             {project.subtitle}
           </span>
         )}
@@ -99,16 +99,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div className="space-y-4 text-[15px] leading-relaxed mb-8 flex-1">
         <p>
-          <span className="text-gray-900 font-bold">Problem: </span>
-          <span className="text-gray-800 font-medium">{project.problem}</span>
+          <span className="text-foreground font-bold">Problem: </span>
+          <span className="text-foreground/80 font-medium">{project.problem}</span>
         </p>
         <p>
-          <span className="text-gray-900 font-bold">Solution: </span>
-          <span className="text-gray-800 font-medium">{project.solution}</span>
+          <span className="text-foreground font-bold">Solution: </span>
+          <span className="text-foreground/80 font-medium">{project.solution}</span>
         </p>
         <p>
           <span className="text-emerald-500 font-bold">Impact: </span>
-          <span className="text-emerald-600 font-bold">{project.impact}</span>
+          <span className="text-emerald-600 font-bold dark:text-emerald-400">{project.impact}</span>
         </p>
       </div>
 
@@ -116,7 +116,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.tech.map(t => (
           <span
             key={t}
-            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-50 border border-gray-100 text-gray-500"
+            className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-muted border border-border text-muted-foreground"
           >
             {t}
           </span>
@@ -125,7 +125,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <a
         href={project.github}
-        className="inline-flex items-center gap-1.5 text-[15px] font-bold text-purple-600 hover:gap-2.5 transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-[15px] font-bold text-purple-600 dark:text-purple-400 hover:gap-2.5 transition-all duration-300"
       >
         View on GitHub
         <ArrowRight className="w-4 h-4" />
@@ -136,7 +138,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="px-6 md:px-12 lg:px-20 py-32 bg-white/30">
+    <section id="projects" className="px-6 md:px-12 lg:px-20 py-32 bg-background/30 transition-colors duration-500">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -146,12 +148,12 @@ export function Projects() {
           className="text-center mb-20"
         >
           <h2
-            className="text-4xl md:text-6xl text-gray-900 mb-4"
+            className="text-4xl md:text-6xl text-foreground mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Featured Projects
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
             Technical systems architected for performance, scalability, and impact.
           </p>
         </motion.div>

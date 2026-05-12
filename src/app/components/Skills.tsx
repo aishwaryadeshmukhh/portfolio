@@ -90,7 +90,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.55, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+      className="bg-card rounded-2xl border border-border p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       <h3
@@ -103,7 +103,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
         {category.skills.map(skill => (
           <li
             key={skill}
-            className="flex items-center gap-3 text-[15px] text-gray-700 font-medium"
+            className="flex items-center gap-3 text-[15px] text-foreground/80 font-medium"
           >
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
@@ -119,7 +119,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
 
 export function Skills() {
   return (
-    <section id="skills" className="px-6 md:px-10 lg:px-16 py-24">
+    <section id="skills" className="px-6 md:px-10 lg:px-16 py-24 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -129,12 +129,12 @@ export function Skills() {
           className="text-center mb-14"
         >
           <h2
-            className="text-4xl md:text-5xl text-gray-900 mb-3"
+            className="text-4xl md:text-5xl text-foreground mb-3"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Skills &amp; Expertise
           </h2>
-          <p className="text-gray-400 text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-muted-foreground text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
             Technologies and tools I work with
           </p>
         </motion.div>

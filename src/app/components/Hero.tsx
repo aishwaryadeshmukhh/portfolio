@@ -17,7 +17,7 @@ const photos = [
   {
     src: '/photos/WhatsApp Image 2026-05-12 at 17.02.20 (1).jpeg',
     alt: 'Hackathon photo',
-    note: 'mandatory college picture where i was unaware of the life of coding',
+    note: 'when life was blissfully unaware of placement season and just about surviving hackathons',
   },
   {
     src: '/photos/WhatsApp Image 2026-05-12 at 17.02.20 (2).jpeg',
@@ -64,7 +64,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/10 bg-gray-100 aspect-[4/5] group/carousel">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/10 bg-muted aspect-[4/5] group/carousel">
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={current}
@@ -87,15 +87,15 @@ export function Hero() {
             {/* Arrows */}
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-white transition-colors z-10 opacity-0 group-hover/carousel:opacity-100"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-background transition-colors z-10 opacity-0 group-hover/carousel:opacity-100"
             >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
+              <ChevronLeft className="w-4 h-4 text-foreground" />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-white transition-colors z-10 opacity-0 group-hover/carousel:opacity-100"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-background transition-colors z-10 opacity-0 group-hover/carousel:opacity-100"
             >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
+              <ChevronRight className="w-4 h-4 text-foreground" />
             </button>
 
             {/* Dots */}
@@ -104,7 +104,7 @@ export function Hero() {
                 <button
                   key={i}
                   onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                  className={`rounded-full transition-all duration-300 ${i === current ? 'w-5 h-2 bg-white' : 'w-2 h-2 bg-white/50'
+                  className={`rounded-full transition-all duration-300 ${i === current ? 'w-5 h-2 bg-foreground' : 'w-2 h-2 bg-foreground/50'
                     }`}
                 />
               ))}
@@ -125,7 +125,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-5xl md:text-6xl lg:text-7xl text-gray-900 leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight"
             >
               Aishwarya Deshmukh
             </motion.h1>
@@ -153,7 +153,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="text-gray-800 text-base md:text-lg leading-relaxed max-w-md"
+              className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-md"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Architecting high-performance agentic AI systems, RAG pipelines, and NL-to-SQL engines.
@@ -169,7 +169,7 @@ export function Hero() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="text-gray-500 text-base md:text-lg italic leading-relaxed max-w-md"
+                  className="text-muted-foreground text-base md:text-lg italic leading-relaxed max-w-md"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {photos[current].note}
@@ -186,13 +186,13 @@ export function Hero() {
             className="pt-2"
           >
             <p
-              className="text-5xl text-gray-800"
+              className="text-5xl text-foreground"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {STAT.value}
             </p>
             <p
-              className="text-sm text-gray-400 mt-0.5"
+              className="text-sm text-muted-foreground mt-0.5"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {STAT.label}
@@ -212,14 +212,14 @@ export function Hero() {
                 e.preventDefault();
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-6 py-2.5 rounded-full border border-gray-300 bg-white/80 text-gray-800 hover:border-gray-400 hover:shadow-md transition-all duration-200 text-sm"
+              className="px-6 py-2.5 rounded-full border border-border bg-background/80 text-foreground hover:border-foreground/30 hover:shadow-md transition-all duration-200 text-sm"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
             >
               View Projects
             </a>
             <button
               onClick={() => setShowResume(true)}
-              className="px-6 py-2.5 rounded-full border border-gray-300 bg-white/80 text-gray-800 hover:border-gray-400 hover:shadow-md transition-all duration-200 text-sm"
+              className="px-6 py-2.5 rounded-full border border-border bg-background/80 text-foreground hover:border-foreground/30 hover:shadow-md transition-all duration-200 text-sm"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
             >
               Resume
@@ -228,10 +228,11 @@ export function Hero() {
 
           {/* Social links */}
           <motion.div
+            id="contact"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
-            className="flex gap-3 pt-1"
+            className="flex gap-3 pt-1 scroll-mt-20"
           >
             {[
               { icon: Github, href: 'https://github.com/aishwaryadeshmukhh', label: 'GitHub' },
@@ -244,7 +245,7 @@ export function Hero() {
                 target={href.startsWith('mailto') ? undefined : '_blank'}
                 rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
                 aria-label={label}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-muted hover:bg-muted/80 flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-110"
               >
                 <Icon className="w-4 h-4" />
               </a>
@@ -266,15 +267,15 @@ export function Hero() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-5xl h-full max-h-[90vh] bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col"
+              className="relative w-full max-w-5xl h-full max-h-[90vh] bg-background rounded-3xl overflow-hidden shadow-2xl flex flex-col"
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <div className="flex items-center gap-3">
-                  <h3 className="text-xl font-semibold text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  <h3 className="text-xl font-semibold text-foreground" style={{ fontFamily: "'Playfair Display', serif" }}>
                     Resume
                   </h3>
-                  <span className="text-xs text-gray-400 font-medium tracking-widest uppercase">Aishwarya Deshmukh</span>
+                  <span className="text-xs text-muted-foreground font-medium tracking-widest uppercase">Aishwarya Deshmukh</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <a
@@ -287,7 +288,7 @@ export function Hero() {
                   </a>
                   <button
                     onClick={() => setShowResume(false)}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500"
+                    className="p-2 hover:bg-muted rounded-full transition-colors text-muted-foreground hover:text-foreground"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -295,25 +296,25 @@ export function Hero() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="flex-1 bg-gray-50 relative">
+              <div className="flex-1 bg-muted relative">
                 <iframe
                   src="/Aishwarya_Deshmukh.pdf"
-                  className="w-full h-full border-none"
+                  className="w-full h-full border-none invert dark:invert-0"
                   title="Aishwarya Deshmukh Resume"
                 />
 
                 {/* Fallback info for some browsers */}
                 <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
-                  <p className="text-gray-400 text-sm">Loading Resume...</p>
+                  <p className="text-muted-foreground text-sm">Loading Resume...</p>
                 </div>
               </div>
 
               {/* Footer / External link */}
-              <div className="px-6 py-3 border-t border-gray-100 flex justify-end">
+              <div className="px-6 py-3 border-t border-border flex justify-end">
                 <a
                   href="/Aishwarya_Deshmukh.pdf"
                   target="_blank"
-                  className="text-xs text-gray-500 hover:text-gray-900 flex items-center gap-1.5 transition-colors"
+                  className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1.5 transition-colors"
                 >
                   Open in new tab <ExternalLink className="w-3 h-3" />
                 </a>

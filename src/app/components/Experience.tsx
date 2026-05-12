@@ -133,12 +133,12 @@ function TimelineCard({
       className="flex gap-6 mb-8 group"
     >
       <div className="flex flex-col items-center flex-shrink-0 pt-2">
-        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-white group-hover:scale-125 transition-transform duration-300" />
-        <div className="flex-1 w-0.5 bg-gray-100 mt-2" />
+        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-background group-hover:scale-125 transition-transform duration-300" />
+        <div className="flex-1 w-0.5 bg-border mt-2" />
       </div>
 
       <div
-        className="flex-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
+        className="flex-1 bg-card/70 backdrop-blur-sm rounded-2xl border border-border p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
@@ -153,18 +153,18 @@ function TimelineCard({
             >
               {title}
             </h4>
-            <p className="text-[15px] font-medium text-blue-600">
+            <p className="text-[15px] font-medium text-blue-600 dark:text-blue-400">
               {org}
             </p>
           </div>
-          <span className="text-xs italic text-gray-400 sm:text-right flex-shrink-0 mt-1">
+          <span className="text-xs italic text-muted-foreground sm:text-right flex-shrink-0 mt-1">
             {period}
           </span>
         </div>
-        <p className="text-[14px] text-gray-600 leading-relaxed mb-3 whitespace-pre-wrap">{description}</p>
+        <p className="text-[14px] text-foreground/80 leading-relaxed mb-3 whitespace-pre-wrap">{description}</p>
         <div className="flex items-start gap-2">
           <span className="text-emerald-500 font-bold">✓</span>
-          <p className="text-[14px] text-emerald-600 font-medium leading-relaxed">
+          <p className="text-[14px] text-emerald-600 dark:text-emerald-400 font-medium leading-relaxed">
             {highlight}
           </p>
         </div>
@@ -196,12 +196,12 @@ function HackCard({
       className="flex gap-6 mb-8 group"
     >
       <div className="flex flex-col items-center flex-shrink-0 pt-2">
-        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-white group-hover:scale-125 transition-transform duration-300" />
-        <div className="flex-1 w-0.5 bg-gray-100 mt-2" />
+        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-background group-hover:scale-125 transition-transform duration-300" />
+        <div className="flex-1 w-0.5 bg-border mt-2" />
       </div>
 
       <div
-        className="flex-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
+        className="flex-1 bg-card/70 backdrop-blur-sm rounded-2xl border border-border p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
@@ -216,15 +216,15 @@ function HackCard({
             >
               {title}
             </h4>
-            <p className="text-[15px] font-medium text-blue-600">
+            <p className="text-[15px] font-medium text-blue-600 dark:text-blue-400">
               {project}
             </p>
           </div>
         </div>
-        <p className="text-[14px] text-gray-600 leading-relaxed mb-3">{description}</p>
+        <p className="text-[14px] text-foreground/80 leading-relaxed mb-3">{description}</p>
         <div className="flex items-start gap-2">
           <span className="text-emerald-500 font-bold">✓</span>
-          <p className="text-[14px] text-emerald-600 font-medium leading-relaxed">
+          <p className="text-[14px] text-emerald-600 dark:text-emerald-400 font-medium leading-relaxed">
             {prize}
           </p>
         </div>
@@ -256,12 +256,12 @@ function LeadCard({
       className="flex gap-6 mb-8 group"
     >
       <div className="flex flex-col items-center flex-shrink-0 pt-2">
-        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-white group-hover:scale-125 transition-transform duration-300" />
-        <div className="flex-1 w-0.5 bg-gray-100 mt-2" />
+        <div className="w-4 h-4 rounded-full border-2 border-blue-500 bg-background group-hover:scale-125 transition-transform duration-300" />
+        <div className="flex-1 w-0.5 bg-border mt-2" />
       </div>
 
       <div
-        className="flex-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200 p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
+        className="flex-1 bg-card/70 backdrop-blur-sm rounded-2xl border border-border p-6 hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
@@ -275,14 +275,14 @@ function LeadCard({
           >
             {title}
           </h4>
-          <span className="text-xs italic text-gray-400 sm:text-right flex-shrink-0 mt-1">
+          <span className="text-xs italic text-muted-foreground sm:text-right flex-shrink-0 mt-1">
             {period}
           </span>
         </div>
-        <p className="text-[14px] text-gray-600 leading-relaxed mb-3">{description}</p>
+        <p className="text-[14px] text-foreground/80 leading-relaxed mb-3">{description}</p>
         <div className="flex items-start gap-2">
           <span className="text-emerald-500 font-bold">✓</span>
-          <p className="text-[14px] text-emerald-600 font-medium leading-relaxed">
+          <p className="text-[14px] text-emerald-600 dark:text-emerald-400 font-medium leading-relaxed">
             {impact}
           </p>
         </div>
@@ -297,7 +297,7 @@ export function Experience() {
   const [active, setActive] = useState<TabId>('internships');
 
   return (
-    <section id="experience" className="px-6 md:px-10 lg:px-16 py-24">
+    <section id="experience" className="px-6 md:px-10 lg:px-16 py-24 transition-colors duration-500">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -307,19 +307,19 @@ export function Experience() {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl md:text-5xl text-gray-900 mb-3"
+            className="text-4xl md:text-5xl text-foreground mb-3"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Experience &amp; Achievements
           </h2>
-          <p className="text-gray-400 text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-muted-foreground text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
             My journey, certifications, and contributions
           </p>
         </motion.div>
 
         {/* Tabs */}
         <div
-          className="flex flex-wrap justify-center gap-0 border-b border-gray-200 mb-10"
+          className="flex flex-wrap justify-center gap-0 border-b border-border mb-10"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           {TABS.map(tab => (
@@ -328,8 +328,8 @@ export function Experience() {
               onClick={() => setActive(tab.id)}
               className={`relative px-4 py-3 text-sm transition-colors duration-200 ${
                 active === tab.id
-                  ? 'text-gray-900'
-                  : 'text-gray-400 hover:text-gray-700'
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
               style={{ fontWeight: active === tab.id ? 600 : 400 }}
             >
